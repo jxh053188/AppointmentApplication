@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="529.0" prefWidth="609.0"
+            xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controllers.ReportsController">
+   <children>
+      <Label layoutX="254.0" layoutY="7.0" prefHeight="35.0" prefWidth="97.0" text="Reports" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="24.0"/>
+         </font>
+      </Label>
+      <HBox layoutY="40.0" prefHeight="311.0" prefWidth="609.0">
+         <children>
+            <Pane prefHeight="286.0" prefWidth="200.0" style="-fx-border-color: Black;">
+               <children>
+                  <Label layoutX="25.0" layoutY="14.0" text="Total Appoint Type by Month" wrapText="true"/>
+                  <Label fx:id="salesLabel" layoutX="14.0" layoutY="93.0" text="Sales"/>
+                  <Label fx:id="marketingLabel" layoutX="14.0" layoutY="117.0" text="Marketing"/>
+                  <Label fx:id="csLabel" layoutX="14.0" layoutY="141.0" text="Customer Service"/>
+                  <Label fx:id="statusLabel" layoutX="14.0" layoutY="164.0" text="Status Update"/>
+                  <Label fx:id="otherLabel" layoutX="14.0" layoutY="187.0" text="Other"/>
+                  <Label fx:id="totalSales" layoutX="151.0" layoutY="93.0" text="0"/>
+                  <Label fx:id="totalMarketing" layoutX="151.0" layoutY="117.0" text="0"/>
+                  <Label fx:id="customerTotal" layoutX="151.0" layoutY="141.0" text="0"/>
+                  <Label fx:id="statusTotal" layoutX="151.0" layoutY="164.0" text="0"/>
+                  <Label fx:id="otherTotal" layoutX="151.0" layoutY="187.0" text="0"/>
+                  <ComboBox fx:id="monthComboBox" layoutX="25.0" layoutY="44.0" onAction="#onGenerateType"
+                            prefWidth="150.0" promptText="Choose Month"/>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: Black;">
+               <children>
+                  <Label layoutX="20.0" layoutY="6.0" text="Total Appointments By Month"/>
+                  <Label fx:id="janLabel" layoutX="14.0" layoutY="26.0" text="January"/>
+                  <Label fx:id="febLabel" layoutX="14.0" layoutY="50.0" text="February"/>
+                  <Label fx:id="marchLabel" layoutX="14.0" layoutY="74.0" text="March"/>
+                  <Label fx:id="aprilLabel" layoutX="14.0" layoutY="97.0" text="April"/>
+                  <Label fx:id="mayLabel" layoutX="14.0" layoutY="120.0" text="May"/>
+                  <Label fx:id="juneLabel" layoutX="14.0" layoutY="140.0" text="June"/>
+                  <Label fx:id="julyLabel" layoutX="14.0" layoutY="160.0" text="July"/>
+                  <Label fx:id="augustLabel" layoutX="14.0" layoutY="180.0" text="August"/>
+                  <Label fx:id="sepLabel" layoutX="14.0" layoutY="202.0" text="September"/>
+                  <Label fx:id="octLabel" layoutX="14.0" layoutY="226.0" text="October"/>
+                  <Label fx:id="novLabel" layoutX="14.0" layoutY="248.0" text="November"/>
+                  <Label fx:id="decLabel" layoutX="14.0" layoutY="269.0" text="December"/>
+                  <Label fx:id="janTotal" layoutX="144.0" layoutY="26.0" text="0"/>
+                  <Label fx:id="febTotal" layoutX="144.0" layoutY="50.0" text="0"/>
+                  <Label fx:id="marTotal" layoutX="144.0" layoutY="74.0" text="0"/>
+                  <Label fx:id="aprilTotal" layoutX="144.0" layoutY="97.0" text="0"/>
+                  <Label fx:id="mayTotal" layoutX="144.0" layoutY="120.0" text="0"/>
+                  <Label fx:id="juneTotal" layoutX="144.0" layoutY="140.0" text="0"/>
+                  <Label fx:id="julyTotal" layoutX="144.0" layoutY="160.0" text="0"/>
+                  <Label fx:id="augTotal" layoutX="144.0" layoutY="180.0" text="0"/>
+                  <Label fx:id="septTotal" layoutX="144.0" layoutY="202.0" text="0"/>
+                  <Label fx:id="octTotal" layoutX="144.0" layoutY="226.0" text="0"/>
+                  <Label fx:id="novTotal" layoutX="144.0" layoutY="248.0" text="0"/>
+                  <Label fx:id="decTotal" layoutX="144.0" layoutY="269.0" text="0"/>
+                  <Button fx:id="generateMonthButton" layoutX="68.0" layoutY="285.0" mnemonicParsing="false"
+                          onAction="#onGenerateMonth" text="Generate"/>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black;">
+               <children>
+                  <Label layoutX="15.0" layoutY="14.0" text="Appointment Type by Customer"/>
+                  <Label fx:id="salesLabel1" layoutX="14.0" layoutY="100.0" text="Sales"/>
+                  <Label fx:id="marketingLabel1" layoutX="14.0" layoutY="124.0" text="Marketing"/>
+                  <Label fx:id="csLabel1" layoutX="14.0" layoutY="148.0" text="Customer Service"/>
+                  <Label fx:id="statusLabel1" layoutX="14.0" layoutY="171.0" text="Status Update"/>
+                  <Label fx:id="otherLabel1" layoutX="14.0" layoutY="194.0" text="Other"/>
+                  <ComboBox fx:id="customerCombo" layoutX="25.0" layoutY="42.0" onAction="#customerAppointmentType"
+                            prefWidth="150.0" promptText="Choose Customer"/>
+                  <Label fx:id="customerSalesTotal" layoutX="139.0" layoutY="100.0" text="0"/>
+                  <Label fx:id="cusMarkTotal" layoutX="139.0" layoutY="124.0" text="0"/>
+                  <Label fx:id="customerCSTotal" layoutX="139.0" layoutY="148.0" text="0"/>
+                  <Label fx:id="customerStatusTotal" layoutX="139.0" layoutY="171.0" text="0"/>
+                  <Label fx:id="customerOtherTotal" layoutX="139.0" layoutY="194.0" text="0"/>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <Pane layoutX="2.0" layoutY="348.0" prefHeight="211.0" prefWidth="597.0">
+         <children>
+            <Label fx:id="contactScheduleLabel" layoutX="14.0" layoutY="15.0" text="Contact Schedule"/>
+            <ComboBox fx:id="contactCombox" layoutX="138.0" layoutY="11.0" onAction="#contactScheduleGenerate"
+                      prefHeight="18.0" prefWidth="139.0" promptText="Choose Contact"/>
+            <TableView fx:id="contactScheduleTable" layoutX="-4.0" layoutY="37.0" prefHeight="173.0" prefWidth="609.0">
+               <columns>
+                  <TableColumn fx:id="appIdColumn" prefWidth="43.0" text="ID"/>
+                  <TableColumn fx:id="appTitleCol" prefWidth="94.0" text="Title"/>
+                  <TableColumn fx:id="typeCol" prefWidth="85.0" text="Type"/>
+                  <TableColumn fx:id="descriptionCol" prefWidth="140.0" text="Description"/>
+                  <TableColumn fx:id="startCol" prefWidth="85.0" text="Start"/>
+                  <TableColumn fx:id="endCol" minWidth="0.0" prefWidth="87.0" text="End"/>
+                  <TableColumn fx:id="cusIdCol" prefWidth="73.0" text="CustomerID"/>
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Button fx:id="mainButton" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#onMainButton"
+              text="Main"/>
+      <Button fx:id="customersButton" layoutX="75.0" layoutY="12.0" mnemonicParsing="false"
+              onAction="#onCustomersButton" text="Customers"/>
+   </children>
+</AnchorPane>
